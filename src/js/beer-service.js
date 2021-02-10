@@ -1,6 +1,6 @@
-export default class NasaService {
-  static async pictureOfTheDay() {
-    return fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.NASA_KEY}`)
+export default class BeerMe {
+  static async randoBeer() {
+    return fetch(`https://api.punkapi.com/v2/beers/random`)
       .then(function (response) {
         if (!response.ok) {
           throw Error(response.statusText);
