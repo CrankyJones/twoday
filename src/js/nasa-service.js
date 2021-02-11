@@ -8,6 +8,20 @@ export default class NasaService {
         return response.json();
       })
       .catch(function (error) {
+        console.log(error);
+        return error;
+      });
+  }
+
+  static async currentWeather() {
+    return fetch(`https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json`)
+      .then(function (response) {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response.json();
+      })
+      .catch(function (error) {
         return error;
       });
   }
